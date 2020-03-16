@@ -11,13 +11,15 @@
                     <img src="{%  static 'anuncios/img/empty.jpg' %}">
                 </div>
                 <div class="content">
-                    <a class="header">{{ anuncio }}</a>
+                    <a href="{% url 'anuncio' anuncio.id %}" class="header">{{ anuncio }}</a>
                 </div>
                 <div class="extra content">
                     R$ {{ anuncio.preco }}
                 </div>
             </div>
         </div>
+        {% empty %}
+            <p>Nenhum anúncio encontrado!</p>
     {% endfor %}
 </div>
 
